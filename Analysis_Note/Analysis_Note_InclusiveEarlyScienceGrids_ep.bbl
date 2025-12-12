@@ -1,0 +1,144 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{H1:2015ubc}
+H.~Abramowicz, et~al., {Combination of measurements of inclusive deep inelastic
+  ${e^{\pm }p}$ scattering cross sections and QCD analysis of HERA data}, Eur.
+  Phys. J. C 75~(12) (2015) 580.
+\newblock \href {http://arxiv.org/abs/1506.06042} {\path{arXiv:1506.06042}},
+  \href {https://doi.org/10.1140/epjc/s10052-015-3710-4}
+  {\path{doi:10.1140/epjc/s10052-015-3710-4}}.
+
+\bibitem{Workman:2022}
+R.~L. Workman, Others, {Review of Particle Physics}, PTEP 2022 (2022) 083C01.
+\newblock \href {https://doi.org/10.1093/ptep/ptac097}
+  {\path{doi:10.1093/ptep/ptac097}}.
+
+\bibitem{Rezaei:2011zzb}
+B.~Rezaei, G.~R. Boroun, {Analytical solution of the longitudinal structure
+  function F(L) in the leading and next-to-leading-order analysis at low x with
+  respect to Laguerre polynomials method}, Nucl. Phys. A 857 (2011) 42--47.
+\newblock \href {http://arxiv.org/abs/1402.0173} {\path{arXiv:1402.0173}},
+  \href {https://doi.org/10.1016/j.nuclphysa.2011.03.012}
+  {\path{doi:10.1016/j.nuclphysa.2011.03.012}}.
+
+\bibitem{Sjostrand:2006}
+T.~Sjostrand, S.~Mrenna, P.~Z. Skands, {PYTHIA 6.4 Physics and Manual}, JHEP 05
+  (2006) 026.
+\newblock \href {http://arxiv.org/abs/hep-ph/0603175}
+  {\path{arXiv:hep-ph/0603175}}, \href
+  {https://doi.org/10.1088/1126-6708/2006/05/026}
+  {\path{doi:10.1088/1126-6708/2006/05/026}}.
+
+\bibitem{jr:2022_YR}
+R.~{Abdul Khalek}, et~al.,
+  \href{https://www.sciencedirect.com/science/article/pii/S0375947422000677}{Science
+  requirements and detector concepts for the electron-ion collider: Eic yellow
+  report}, Nuclear Physics A 1026 (2022) 122447.
+\newblock \href
+  {https://doi.org/https://doi.org/10.1016/j.nuclphysa.2022.122447}
+  {\path{doi:https://doi.org/10.1016/j.nuclphysa.2022.122447}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0375947422000677}
+
+\bibitem{Adam:2021}
+J.~Adam, et~al.,
+  \href{https://github.com/eic/documents/blob/master/reports/general/Note-Simulations-BeamEffects.pdf}{Accelerator
+  and beam conditions critical for physics and detector simulations for the
+  electron-ion collider}, Internal Note (Jul 2021).
+\newline\urlprefix\url{https://github.com/eic/documents/blob/master/reports/general/Note-Simulations-BeamEffects.pdf}
+
+\bibitem{eicsmear}
+K.~Kauder, et~al., \href{https://github.com/eic/eic-smear}{{EIC-smear}}.
+\newline\urlprefix\url{https://github.com/eic/eic-smear}
+
+\bibitem{Bassler:1994uq}
+U.~Bassler, G.~Bernardi, {On the kinematic reconstruction of deep inelastic
+  scattering at HERA: The Sigma method}, Nucl. Instrum. Meth. A 361 (1995)
+  197--208.
+\newblock \href {http://arxiv.org/abs/hep-ex/9412004}
+  {\path{arXiv:hep-ex/9412004}}, \href
+  {https://doi.org/10.1016/0168-9002(95)00173-5}
+  {\path{doi:10.1016/0168-9002(95)00173-5}}.
+
+\bibitem{Bassler:1997tv}
+U.~Bassler, G.~Bernardi, {Structure function measurements and kinematic
+  reconstruction at HERA}, Nucl. Instrum. Meth. A 426 (1999) 583--598.
+\newblock \href {http://arxiv.org/abs/hep-ex/9801017}
+  {\path{arXiv:hep-ex/9801017}}, \href
+  {https://doi.org/10.1016/S0168-9002(99)00044-3}
+  {\path{doi:10.1016/S0168-9002(99)00044-3}}.
+
+\bibitem{Candido:2024rkr}
+A.~Candido, F.~Hekhorn, G.~Magni, T.~R. Rabemananjara, R.~Stegeman, {Yadism:
+  yet another deep-inelastic scattering module}, Eur. Phys. J. C 84~(7) (2024)
+  698.
+\newblock \href {http://arxiv.org/abs/2401.15187} {\path{arXiv:2401.15187}},
+  \href {https://doi.org/10.1140/epjc/s10052-024-12972-7}
+  {\path{doi:10.1140/epjc/s10052-024-12972-7}}.
+
+\bibitem{Ball:2015tna}
+R.~D. Ball, V.~Bertone, M.~Bonvini, S.~Forte, P.~Groth~Merrild, J.~Rojo,
+  L.~Rottoli, {Intrinsic charm in a matched general-mass scheme}, Phys. Lett. B
+  754 (2016) 49--58.
+\newblock \href {http://arxiv.org/abs/1510.00009} {\path{arXiv:1510.00009}},
+  \href {https://doi.org/10.1016/j.physletb.2015.12.077}
+  {\path{doi:10.1016/j.physletb.2015.12.077}}.
+
+\bibitem{Carrazza:2020gss}
+S.~Carrazza, E.~R. Nocera, C.~Schwan, M.~Zaro, {PineAPPL: combining EW and QCD
+  corrections for fast evaluation of LHC processes}, JHEP 12 (2020) 108.
+\newblock \href {http://arxiv.org/abs/2008.12789} {\path{arXiv:2008.12789}},
+  \href {https://doi.org/10.1007/JHEP12(2020)108}
+  {\path{doi:10.1007/JHEP12(2020)108}}.
+
+\bibitem{NNPDF:2017mvq}
+R.~D. Ball, et~al., {Parton distributions from high-precision collider data},
+  Eur. Phys. J. C 77~(10) (2017) 663.
+\newblock \href {http://arxiv.org/abs/1706.00428} {\path{arXiv:1706.00428}},
+  \href {https://doi.org/10.1140/epjc/s10052-017-5199-5}
+  {\path{doi:10.1140/epjc/s10052-017-5199-5}}.
+
+\bibitem{H1:1999qgy}
+C.~Adloff, et~al., {Measurement of neutral and charged current cross-sections
+  in positron proton collisions at large momentum transfer}, Eur. Phys. J. C 13
+  (2000) 609--639.
+\newblock \href {http://arxiv.org/abs/hep-ex/9908059}
+  {\path{arXiv:hep-ex/9908059}}, \href {https://doi.org/10.1007/s100520000316}
+  {\path{doi:10.1007/s100520000316}}.
+
+\bibitem{H1:2000olm}
+C.~Adloff, et~al., {Measurement of neutral and charged current cross-sections
+  in electron - proton collisions at high $Q^{2}$}, Eur. Phys. J. C 19 (2001)
+  269--288.
+\newblock \href {http://arxiv.org/abs/hep-ex/0012052}
+  {\path{arXiv:hep-ex/0012052}}, \href {https://doi.org/10.1007/s100520100607}
+  {\path{doi:10.1007/s100520100607}}.
+
+\bibitem{H1:2009jxj}
+F.~D. Aaron, et~al., {Measurement of the Inclusive $ep$ Scattering Cross
+  Section at Low $Q^2$ and $x$ at HERA}, Eur. Phys. J. C 63 (2009) 625--678.
+\newblock \href {http://arxiv.org/abs/0904.0929} {\path{arXiv:0904.0929}},
+  \href {https://doi.org/10.1140/epjc/s10052-009-1128-6}
+  {\path{doi:10.1140/epjc/s10052-009-1128-6}}.
+
+\bibitem{ZEUS:2001mhd}
+S.~Chekanov, et~al., {Measurement of the neutral current cross-section and F(2)
+  structure function for deep inelastic e + p scattering at HERA}, Eur. Phys.
+  J. C 21 (2001) 443--471.
+\newblock \href {http://arxiv.org/abs/hep-ex/0105090}
+  {\path{arXiv:hep-ex/0105090}}, \href {https://doi.org/10.1007/s100520100749}
+  {\path{doi:10.1007/s100520100749}}.
+
+\bibitem{Jimenez-Lopez:2024hpj}
+J.~Jim{\'e}nez-L{\'o}pez, P.~R. Newman, K.~Wichmann, {Prospects for
+  measurements of the longitudinal proton structure function FL at the Electron
+  Ion Collider}, Phys. Rev. D 111~(5) (2025) 056014.
+\newblock \href {http://arxiv.org/abs/2412.16123} {\path{arXiv:2412.16123}},
+  \href {https://doi.org/10.1103/PhysRevD.111.056014}
+  {\path{doi:10.1103/PhysRevD.111.056014}}.
+
+\end{thebibliography}

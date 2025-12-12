@@ -1,0 +1,38 @@
+# Common binary formats
+*.hdf5
+*.h5
+*.bin
+*.dat
+
+# Python/cache files
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDE/Editor files
+.vscode/
+*.swp
+*.swo
+*.swn
+*.swm
+*.swf
+
+# Backup files ending with ~
+*~
+
+# Emacs backup files
+*#
+.#*
+
+# Emacs auto-save files
+*.tmp
+*.bak
+*.orig
+*.backup
+
+# Generic backup/temporary patterns
+*.tmp
+*.temp
+*.old
+*.save
+*.backup

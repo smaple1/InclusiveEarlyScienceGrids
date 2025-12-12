@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Simulation Overview}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Event Generator Details}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Event Selection}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Scattered electron and Hadronic Final State}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Event Kinematics}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Binning}{5}{section.4}%
+\contentsline {section}{\numberline {5}Cross section predictions}{7}{section.5}%
+\contentsline {section}{\numberline {6}Systematics}{9}{section.6}%
+\contentsline {section}{\numberline {7}Results and Discussion}{10}{section.7}%
+\contentsline {section}{\numberline {8}Conclusions}{17}{section.8}%

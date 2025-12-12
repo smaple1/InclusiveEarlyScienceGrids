@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pdflatex Analysis_Note_InclusiveEarlyScienceGrids_ep.tex 
+bibtex Analysis_Note_InclusiveEarlyScienceGrids_ep
+pdflatex Analysis_Note_InclusiveEarlyScienceGrids_ep.tex 
+pdflatex Analysis_Note_InclusiveEarlyScienceGrids_ep.tex 

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Analysis_Note_InclusiveEarlyScienceGrids_ep.aux
+The style file: elsarticle-num.bst
+Database file #1: bibliography.bib
+Warning--empty year in eicsmear
+You've used 18 entries,
+            2952 wiz_defined-function locations,
+            829 strings with 8925 characters,
+and the built_in function-call counts, 5834 in all, are:
+= -- 617
+> -- 162
+< -- 0
++ -- 66
+- -- 48
+* -- 551
+:= -- 802
+add.period$ -- 34
+call.type$ -- 18
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 148
+empty$ -- 614
+format.name$ -- 66
+if$ -- 1471
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 16
+newline$ -- 81
+num.names$ -- 18
+pop$ -- 61
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 377
+stack$ -- 0
+substring$ -- 287
+swap$ -- 80
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 42
+width$ -- 20
+write$ -- 198
+(There was 1 warning)

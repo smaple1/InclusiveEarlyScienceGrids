@@ -1,0 +1,288 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\pagestyle{plain}
+\usepackage{graphicx}
+\usepackage[small]{caption}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{hyperref}
+
+% Only pages that  are more than 80% full are put on 1 page
+\renewcommand{\floatpagefraction}{.8}% 
+
+\pagenumbering{roman}
+%Insert your title and author list below
+\title{Reduced cross sections from electron-proton collisions during EIC early science}
+\author[1]{S. Maple}
+
+\affil[1]{School of Physics and Astronomy, University of Birmingham, B15 2TT, UK}
+
+\date{December 2025}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+  The inclusive cross section for Deep Inelastic Scattering (DIS) provides valuable information about the quark and gluon substructure of the proton. Measurements of the inclusive cross section at the Electron-Ion Collider (EIC) will enable the study of the proton structure functions $F_2$ and $F_L$, and the constraining of the collinear parton distribution functions. In this analysis note, prospects for the precision and coverage of inclusive DIS cross section measurements in the first five years of EIC running are presented, using modest assumptions about the luminosity and varying scenarios for the systematic uncertainties. The precision of the projected cross section measurements are shown alongside the uncertainty on cross section predictions using NNPDF3.1. The potential applications of the cross section grids in future studies are discussed.
+
+  % show kinematic range achievable in early science, for modest luminosities and varying assumptions of systematics.
+\end{abstract}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{Figures/EPIC-logo_black.png}
+\end{figure}
+
+\pagebreak
+\tableofcontents
+
+\pagebreak
+\pagenumbering{arabic}
+
+\section{Introduction}\label{sec:Intro}
+
+Deep Inelastic Scattering (DIS) of leptons by protons has long been used to probe the internal structure of strongly interacting matter. The cross section for the inclusive DIS process, shown diagrammatically in Fig.~\ref{fig:dis_feynman}, enables the extraction of the structure functions $F_2$, $F_L$, and $xF_3$ via the relation
+\begin{equation}\label{eq:DIS_reduced_xSec_F3}
+  \sigma_r = \frac{xQ^4}{2\pi \alpha^2Y_+}\left[\frac{d^2\sigma}{dx dQ^2}\right] = F_2(x,Q^2) - \frac{y^2}{Y_+}F_L(x,Q^2) + \frac{Y_-}{Y_+}xF_3,
+\end{equation}
+where $Y_\pm = 1 \pm (1+y)^2$ and $\alpha$ is the fine structure constant\cite{H1:2015ubc}. The structure functions may be related, at leading order, to the quark densities as~\cite{Workman:2022}
+\begin{flalign} % <-- observe: 'flalign*', not 'align*'
+  & F_2 \propto x\sum_q (q+\bar{q}),  & \\
+  & xF_3 \propto x\sum_q (q-\bar{q}),  & \\
+  & F_L = 0.  &
+\end{flalign}
+The longitudinal structure function $F_L$ obtains its first contribution at next to leading order, and is therefore sensitive to the gluon density, following the approximate relationship $F_L(x,Q^2) \propto \alpha_s xg(x,Q^2)$~\cite{Rezaei:2011zzb}. It can therefore be understood that, through the measurement of the reduced cross section $\sigma_r$, the collinear parton distribution functions (PDFs) can be constrained.
+
+% see https://arxiv.org/pdf/1402.0173 for F_L approximation
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/DIS_feynman.png}
+    \caption{Quark Parton Model diagram of Neutral-Current Deep Inelastic Scattering of an electron by a proton.}
+\label{fig:dis_feynman}
+\end{figure}
+
+\section{Simulation Overview}\label{sec:Sim_Overview}
+
+% Details on the simulation, event generator used, detector geometry, beam conditions etc. Details on the relevant simulation campaign. Reference other sections via Sec.~\ref{sec:Intro} and cite things via \cite{jr:2022_YR}. Reference figures as Fig.~\ref{fig:LBoi}.
+
+For the studies contained within this analysis note, a sample of inclusive $ep$ events that were produced using Pythia version 6.428~\cite{Sjostrand:2006} were simulated and reconstructed using the ePIC software stack, and used to obtain estimates for the \textbf{statistical uncertainties} on the inclusive cross sections. The value of and theoretical uncertainty on the cross section for each $(x, Q^2)$ point were obtained separately using a framework for the prediction of DIS observables, while the systematic uncertainties were inspired by previous studies in the EIC Yellow Report~\cite{jr:2022_YR}.
+
+\subsection{Event Generator Details}\label{subsec:EvGen}
+
+% Information on event generator utilised. Specify version, link to instructions for running code (should be provided for Production WG). Break out other components into subsections if desired/needed (e.g. if simulation geometry is specific/unique).
+
+The inclusive $ep$ events were simulated in Pythia version 6.428, using a preset for minimum-bias event generation. Samples were produced for three potential early science $ep$ beam configurations: $5\times130$, $10\times130$, and $10\times250$~GeV$^2$. The samples contained 500k events for each of the ranges $1<Q^2<10$, $10<Q^2<100$, and $100<Q^2<1000$~GeV$^2$, while 50k events were generated for $Q^2>1000$~GeV$^2$. The ranges in $x$ and $y$ were $10^{-9}<x<1$ and $10^{-3}<y<1$ respectively, to provide adequate generator phase space for cross section measurements down to $y\sim10^{-2}$. Each sample was processed using the EIC afterburner~\cite{Adam:2021} to apply the 25~mrad crossing angle as well as energy fluctuations and beam divergence.
+
+The events can be produced using the runcards provided in \url{https://github.com/eic/InclusiveEarlyScienceSamples} as
+\begin{verbatim}
+pythia-eic < runcard.eic > logfiles/runcard.log
+\end{verbatim}
+with generation and cross section information being stored in the log file. The events can then be converted to HEPMC using the conversion tools provided by eic-smear~\cite{eicsmear}. Any simulated data used in the production of plots for the following sections were produced using the versions of NPSIM and EICrecon as of the 25.10.0 production.
+
+
+\section{Event Selection}\label{sec:EvSelect}
+
+%Information on your event selection procedure/process. Highlight any specific subsystems used if relevant. Outline cuts used, ordering, rationale. If a cut is ``unusual'' or non-standard, make sure you discuss it. When showing kinematic variables, \textbf{clarify the reconstruction method.} If needed, include a description of the reconstruction method.
+
+\subsection{Scattered electron and Hadronic Final State}
+Minimal selection cuts were used in the processing of the samples. As there are inefficiencies in some aspects of the current electron finder, such as in track-cluster linking, the \textsc{ScatteredElectronsTruth} branch was used to obtain the track corresponding to the true scattered electron. This approach was chosen as is expected that this ``full efficiency'' electron finder will provide performance more comparable to the fully developed electron finder that is anticipated to be available for early science. The event selection required that a track corresponding to the true scattered electron be present in the event, and also that the one or more particles other than the scattered electron exist in the \textsc{ReconstructedParticles} collection. Further to this, it was required that the $E-p_z$ sum of all particles in the event satisfy the requirement $2E_0-4~\text{GeV} < E-p_z < 2E_0+2~\text{GeV}$, where $E_0$ is the electron beam energy.
+
+One of the primary purposes of the $E-p_z$ cut is to remove events containing high energy initial state radiation (ISR), as well as events resulting from beam- or physics-induced background processes. The cut chosen here is sufficient to remove events containing ISR photons with $E_\gamma \gtrsim 2$~GeV. The simulated samples contain pure DIS events with no QED radiative corrections present, however the $E-p_z$ cut is still applied. This will remove some of the more poorly reconstructed DIS events, thus inflating the statistical uncertainties.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.31\linewidth,trim={0cm 0 0 0.1cm},clip]{Figures/Empz_10x130_postCut.png}
+    \includegraphics[width=0.31\linewidth,trim={0cm 0 0 0.1cm},clip]{Figures/Empz_10x250_postCut.png}
+    \includegraphics[width=0.31\linewidth,trim={0cm 0 0 0.1cm},clip]{Figures/Empz_5x130_postCut.png}
+    \caption{The distribution $E-p_z$ sum of all reconstructed particles after the initial selection and cuts, for 10x130 (top-left), 10x250 (top-right), and 5x130 (bottom) GeV$^2$ ep DIS events.}
+\label{fig:Empz}
+\end{figure}
+
+The $E-p_z$ distributions of events passing both the initial selection and $E-p_z$ cuts in each beam energy configuration are shown in Fig.~\ref{fig:Empz}. Here it can be seen that the $E-p_z$ distribution peaks at twice the electron beam energy in each configuration, as is expected for a properly reconstructed pure DIS sample. Events in which a significant proportion of the hadronic final state is lost down the beampipe have a lower value of $E-p_z$, and are removed by the cut.
+
+\subsection{Event Kinematics}
+In this analysis, kinematic reconstruction is performed using several reconstruction methods~\cite{Bassler:1994uq}, but only reconstruction with the electron method is used for the full analysis. This choice stems from the consideration that the early science measurements will be made in the first years of operation, and as a detailed understanding of the detector response to hadrons may take time to achieve, the electron-only method may be preferable at this stage. No cut on $y$ is performed at the sample processing stage, with bins that have values of $y$ laying outside of the accepted range of $0.01<y_e<0.95$ instead being removed later on in the analysis.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.31\linewidth]{Figures/xReso_ele_10x130.png}
+    \includegraphics[width=0.31\linewidth]{Figures/yReso_ele_10x130.png}
+    \includegraphics[width=0.31\linewidth]{Figures/Q2Reso_ele_10x130.png}
+    \includegraphics[width=0.31\linewidth]{Figures/xReso2D_ele_10x130.png}
+    \includegraphics[width=0.31\linewidth]{Figures/yReso2D_ele_10x130.png}
+    \includegraphics[width=0.31\linewidth]{Figures/Q2Reso2D_ele_10x130.png}
+    \caption{Resolution on the inclusive kinematic variables $x$ (left), $y$ (middle), and $Q^2$ (right) when reconstructed using the electron-only method. (Top) The resolution is shown integrated over all events after the initial selection and $E-p_z$ cut. (Bottom) The resolution is shown as a function of $y$.}
+\label{fig:kinematics}
+\end{figure}
+
+The resolutions on the reconstructed kinematic variables $x$, $y$, and $Q^2$ are shown in Fig.~\ref{fig:kinematics}, both 1-dimensionally, and as a 2-dimensional function of $y$. The rise towards -1 in the 1-dimensional $\Delta x/x$ distribution is a consequence of the large, positive fluctuations in the reconstructed value of $y$ in low $y$ events, where the reconstruction is poor. This is evidenced in the 2-dimensional $\Delta x/x$ vs $y$ plot, which shows a peak at $y\sim0$ and $\Delta x/x \sim -1$. These poorly reconstructed events are removed later on in the analysis by the $y > 0.01$ requirement.
+
+\section{Binning}\label{sec:Binning}
+Events passing the selection criteria and cuts are binned in 2 dimensional $x-Q^2$ histograms with a weighting factor calculated according to the projected luminosity and the generated cross section for the given $Q^2$ range. The weighting factor is calculated as
+\begin{equation}
+  w = \frac{\sigma_{gen} L_{\text{proj}}}{n_{gen}}
+\end{equation}
+and a (modest) projected luminosity of 1~fb$^{-1}$ is assumed for each beam configuration. Two $x-Q^2$ binning schemes are considered: a standard binning scheme of five bins per decade in $x$ and $Q^2$, and a second binning scheme optimised to facilitate the combination of the EIC pseudodata with HERA inclusive cross section measurements. The numbers of (weighted) generated and reconstructed events are shown in Fig.~\ref{fig:num_events} for the $10\times250$~GeV$^2$ beam setting.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\linewidth]{Figures/Gen_ele_10x250.png}
+    \includegraphics[width=0.48\linewidth]{Figures/Rec_ele_10x250.png}
+    \caption{Number of generated (left) and reconstructed (right) events scaled to 1~fb$^{-1}$ of luminosity for 10x250~GeV$^2$ ep events in the ``Standard'' binning.}
+\label{fig:num_events}
+\end{figure}
+
+There is an increase in the number of events in a given bin for some of the reconstructed bins, even though the total number of events is lower due to the removal of events during event selection. The extent of the bin migration can be understood in terms of the purity and stability of the bins~\cite{Bassler:1997tv}, defined by
+\begin{flalign*}
+  & \text{Purity} = n_{\text{rec \& gen}} / n_{\text{rec}},  & \\
+  & \text{and} & \\
+  & \text{Stability} = n_{\text{rec \& gen}} / n_{\text{gen}},  &
+\end{flalign*}
+and shown for the $10\times250$~GeV$^2$ samples in Fig.~\ref{fig:purity_stability}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\linewidth]{Figures/Purity_ele_10x250.png}
+    \includegraphics[width=0.48\linewidth]{Figures/Stability_ele_10x250.png}
+    \caption{Purity (left) and Stability (right) of 10x250~GeV$^2$ ep events in the ``Standard'' binning.}
+\label{fig:purity_stability}
+\end{figure}
+The stability is primarily determined by the local kinematic resolution in a given bin, while the purity is influenced both by the local resolution of the chosen bin, and also the resolutions of the surrounding bins and the subsequent migration of events into the bin. For binned cross section measurements at H1 and ZEUS, a minimum purity and stability threshold was often set at a level of 30-40~\%~\cite{Bassler:1997tv}, as below this threshold the systematic uncertainties associated with the smeared acceptance correction grow large. For regions of the phase space where the bin purity and stability falls below this threshold, it is often still possible to make measurements, either by choosing a kinematic reconstruction method that performs better in this region, or by binning more coarsely such that the bins become less senstive to bin migrations.
+
+For the calculation of statistical uncertainties in this analysis, each $(x,Q^2)$ point is assigned a percent uncertainty on the cross section as $100 / \sqrt{n_{\text{rec,i}}}$, where $n_{\text{rec,i}}$ is the number of events reconstructed in bin $i$ after event selection and cuts. The statistical uncertainties (in percent) for each beam energy configuration are shown in Fig.~\ref{fig:stat_err}. Here it can be seen that for the majority of the phase space the statistical uncertainties are below 1~\%, except for the largest $x$ and $Q^2$ values where they rise to a maximum of $\sim20$~\%. Bins are removed from consideration if the $y$ value of the bin centre falls outside the range $0.01<y<0.95$. The purity and stability values are retained such that a threshold may be applied in the plotting scripts to remove points below the threshold.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\linewidth]{Figures/StatErr_ele_5x130.png}
+    \includegraphics[width=0.48\linewidth]{Figures/StatErr_ele_10x130.png}
+    \includegraphics[width=0.48\linewidth]{Figures/StatErr_ele_10x250.png}
+    \caption{Statistical uncertainty in percent for 5x130~GeV$^2$ (top left), 10x130~GeV$^2$ (top right), and 10x250~GeV$^2$ (bottom) ep events in the ``Standard'' binning.}
+\label{fig:stat_err}
+\end{figure}
+
+\section{Cross section predictions}
+
+The final cross section and uncertainty grids produced in this analysis are intended to be used for additional studies of structure functions and PDF impact. While cross section predictions may be obtained through the full simulation of generated physics events, the cross sections obtained at the end are simply those calculated by the generator. Such an approach is time and resource intensive, dependent on the specific build and settings of the generator, and inconvenient to change theory settings or to obtain PDF uncertainties from. For the purpose of studying structure functions and PDF impact, it is beneficial to use a theoretical model to obtain coefficient functions (at a chosen order in QCD) for the cross section observable, such that the cross section may be calculated as
+\begin{equation}
+  \sigma = \sum_j(f_j \otimes c_j) % cite yadism doc
+\end{equation}
+where the sum runs over contributing partons $j$ with coefficient functions $c_j$ and PDFs $f_j$. For this analysis, the cross section observable was computed using the \textsc{yadism}~\cite{Candido:2024rkr} library for the computation of structure functions and cross sections. The coefficient functions were calculated at NNLO in a FONLL~\cite{Ball:2015tna} flavour number scheme for each $(x,Q^2)$ bin centre and saved as a PineAPPL~\cite{Carrazza:2020gss} grid file, such that the calculations may be reused to obtain cross section predictions for multiple PDF sets. The PDF set chosen for this analysis was \textsc{NNPDF31\_nnlo\_as\_0118\_proton}~\cite{NNPDF:2017mvq}, with the central value of the cross section being computed from replica 0, and the (symmetric) uncertainties on the cross section prediction from the fluctuations in the prediction when using the remaining replicas. The cross section predictions and uncertainties over four orders of magnitude in $Q^2$ are shown in Fig.~\ref{fig:xsec_predictions}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\linewidth]{Figures/NNPDF31_nnlo_as_0118_proton_Xsec_ep_Ee10_Ep250.StandardBinning_Q2_3.162.png}
+    \includegraphics[width=0.48\linewidth]{Figures/NNPDF31_nnlo_as_0118_proton_Xsec_ep_Ee10_Ep250.StandardBinning_Q2_31.62.png}
+    \includegraphics[width=0.48\linewidth]{Figures/NNPDF31_nnlo_as_0118_proton_Xsec_ep_Ee10_Ep250.StandardBinning_Q2_316.2.png}
+    \includegraphics[width=0.48\linewidth]{Figures/NNPDF31_nnlo_as_0118_proton_Xsec_ep_Ee10_Ep250.StandardBinning_Q2_3162.png}
+    \caption{Cross section predictions from NNPDF3.1 for the 10x250~GeV$^2$ ep beam configuration as a function of $x$ at four values of $Q^2$. The values shown are $Q^2 = 3.162$~GeV (top left), $Q^2 = 31.62$~GeV (top right), $Q^2 = 316.2$~GeV (bottom left), and $Q^2 = 3.162$~GeV (bottom right).}
+\label{fig:xsec_predictions}
+\end{figure}
+
+\section{Systematics}
+
+It is difficult to achieve precise estimates of systematic uncertainties for an accelerator and detector that are yet to be constructed. In the EIC Yellow Report~\cite{jr:2022_YR}, estimations were made for the contributions of various sources of systematic uncertainties to an unpolarised ep NCDIS measurement. These estimates were divided into optimistic and pessimistic scenarios, determined by the sum in quadrature of either the lower or upper bound of the contributing uncertainties. The uncertainty sources were divided into totally correlated sources, yielding the overall scale (or normalisation) uncertainty, and totally uncorrelated point-to-point uncertainties, with no effort being made to estimate partially correlated sources. Note also that, where applicable, the normalisation uncertainties were chosen to be totally uncorrelated between different beam configurations.
+
+The optimistic and pessimistic estimates for the point-to-point systematic uncertainties were 1.5~\% and 2.3~\% respectively, originating from a 1~\% uncertainty on the radiative corrections, and a 1-2~\% uncertainty due to detector effects. The normalisation uncertainties in the optimistic and pessimistic scenarios were set to 2.5~\% and 4.3~\% respectively, due to a 1~\% uncertainty on the luminosity measurement, and 2-4~\% due to detector effects.
+
+These optimistic and pessimistic estimates for the normalisation uncertainties will be assumed for this analysis. The point to point systematic uncertainties are adjusted in accordance with early studies in ePIC simulations. These studies assumed an electron energy scale uncertainty of 0.5~\%, a hadron energy scale uncertainty of 1~\%, and an electron polar angle uncertainty of 1~mrad. A 0.5-4~\% uncertainty on detector effects was found for bins of $>30$~\% purity and stability, see Fig.~\ref{fig:detector_effects}, with the assumption that mixed reconstruction methods may aid in setting limits on the systematics. These values were taken as the updated uncertainty from detector effects, and in combination with a 1~\% uncertainty on radiative corrections gives an optimistic (pessimistic) estimate for the point to point systematic uncertainty of 1.2~\% (4.2~\%).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/detector_effects_p2p_10x130.png}
+    \caption{The symmetrised total systematic uncertainty from electron and hadronic energy scale fluctuations and electron polar angle uncertainties in the 10x130~GeV$^2$ ep beam configuration. The reconstruction method offering the best systematic uncertainty sets the value for each bin. Bins are removed if either purity or stability are below 30~\%.}
+\label{fig:detector_effects}
+\end{figure}
+% reference WG presentation?
+
+The percentage uncertainty from statistical uncertainties only, as well as the total uncertainties in both the optimistic and pessimistic scenarios, are shown in Fig.~\ref{fig:xsec_errors} for the $10\times250$~GeV$^2$ beam setting. Here it can be seen that the cross section uncertainty is dominated by systematic uncertainties except for $x\gtrsim10^{-1}$ where, for 1~fb$^{-1}$ of integrated luminosity, the statistical uncertainty contributes significantly at $Q^2 \gtrsim 1000$~GeV$^2$.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.48\linewidth]{Figures/Error_vs_Q2_x7.9e-01.png}
+    \includegraphics[width=0.48\linewidth]{Figures/Error_vs_Q2_x7.9e-02.png}
+    \includegraphics[width=0.48\linewidth]{Figures/Error_vs_Q2_x7.9e-03.png}
+    \includegraphics[width=0.48\linewidth]{Figures/Error_vs_Q2_x7.9e-04.png}
+    \caption{Cross section uncertainties for the 10x250~GeV$^2$ ep beam configuration as a function of $Q^2$ at four values of $x$.}
+\label{fig:xsec_errors}
+\end{figure}
+
+
+% \subsection{Analysis Code}\label{subsec:Analysis_Code}
+% 
+% Information on where to find your analysis code, how to run it. Consider adding additional details to the appendix (weird compilation quirks etc).
+
+\section{Results and Discussion}\label{sec:Results_Discuss}
+
+The statistical uncertainties as obtained from ePIC simulations for 1~fb$^{-1}$ integrated luminosity in each bin configuration were combined with the systematic uncertainty estimates described in the previous section, as well as the NNPDF3.1 cross section predictions, to produce estimates for the precision and phase space coverage of inclusive cross section measurements during EIC early science. The phase space coverage of the 10x130 and 10x250~GeV$^2$ ep beam configurations are shown in Fig.~\ref{fig:xsec_2_com_no_ps} for all bins with $0.01 < y < 0.95$, and in Fig.~\ref{fig:xsec_2_com_ps_req} with the additional requirement that the bins have purity and stability greater than 30~\%. This analysis assumes electron-only method reconstruction, which leads to lower purity and stability at low $y$ where the method degrades. However, it should be possible to recover bins in this range through the use of mixed reconstruction methods, hence the inclusion of Fig.~\ref{fig:xsec_2_com_no_ps}. Note that the pessimistic scenario is assumed and error bars plotted for both plots, but due to the small overall uncertainties and the logarithmic scale of the plot, these are often obscured by the markers.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/xsec_2_com_pessimistic_no_PS_cut.pdf}
+    \caption{Cross sections and uncertainties for the 10x130 and 10x250~GeV$^2$ ep beam configuration as a function of $Q^2$ with no purity/stability requirement. Points are offset in $Q^2$ for visibility.}
+\label{fig:xsec_2_com_no_ps}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/xsec_2_com_pessimistic_0.3_PS_cut.pdf}
+    \caption{Cross sections and uncertainties for the 10x130 and 10x250~GeV$^2$ ep beam configuration as a function of $Q^2$ for bins with purity and stability larger than 30~\%. Points are offset in $Q^2$ for visibility.}
+\label{fig:xsec_2_com_ps_req}
+\end{figure}
+
+The addition of a third, lower ep energy run to the early science run schedule could be extremely beneficial for the inclusive physics programme during early running, as it would permit the extraction of $F_L$ using a traditional Rosenbluth separation in the overlap region, as well as extending the $(x,Q^2)$ phase space to achieve more precise measurements at high $x$ and moderate $Q^2$. The phase space increase through the inclusion of a 5x130~GeV$^2$ ep configuration to the early science programme is shown for all bins with $0.01<y<0.95$ and those that also have purity and stability greater than 30~\% in Fig.~\ref{fig:xsec_all_com_no_ps} and \ref{fig:xsec_all_com_ps_req} respectively.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/xsec_all_com_pessimistic_no_PS_cut.pdf}
+    \caption{Cross sections and uncertainties for the 5x130, 10x130,  and 10x250~GeV$^2$ ep beam configuration as a function of $Q^2$ with no purity/stability requirement. Points are offset in $Q^2$ for visibility.}
+\label{fig:xsec_all_com_no_ps}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/xsec_all_com_pessimistic_0.3_PS_cut.pdf}
+    \caption{Cross sections and uncertainties for the 5x130, 10x130, and 10x250~GeV$^2$ ep beam configuration as a function of $Q^2$ for bins with purity and stability larger than 30~\%. Points are offset in $Q^2$ for visibility.}
+\label{fig:xsec_all_com_ps_req}
+\end{figure}
+
+For the improved visibility of the values and uncertainties, the cross sections are also plotted on stamp plots with linear scale. Note that these plots are best viewed by opening each .pdf file in a separate viewer, rather than as part of this note, but they are included here for completeness. The cross sections, with pessimistic uncertainties, are shown as a function of $Q^2$ at fixed $x$ in Fig.~\ref{fig:xsec_stamp_10x130_Q2} and \ref{fig:xsec_stamp_10x250_Q2} for 10x130 and 10x250~GeV$^2$ respectively, for $0.01<y<0.95$, with no purity or stability requirement applied. The equivalent plots shown as a function of $x$ at fixed $Q^2$ in Fig.~\ref{fig:xsec_stamp_10x130_x} and \ref{fig:xsec_stamp_10x250_x} for 10x130 and 10x250~GeV$^2$ respectively. When inspiecting the plots closely, it can be seen the impact at the $x=0.79$ bin centre can be large, even though this region is statisticallly limited and the assumed luminosity of 1~fb$^{-1}$ is conservative. Assuming total annual luminosity for a year of running each of these ep configurations leads to an improvement in the statistical uncertainties by a factor of $\sim$2-3. However, this would come at the cost of the running of other beam configurations, which will also offer opportunities for interesting measurements during early science.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.98\linewidth]{Figures/xsec_10x130_multiplot_no_PS_cut_vs_Q2.pdf}
+    \caption{Cross sections and uncertainties for the 10x130~GeV$^2$ ep beam configuration as a function of $Q^2$ with no purity/stability requirement.}
+\label{fig:xsec_stamp_10x130_Q2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.98\linewidth]{Figures/xsec_10x250_multiplot_no_PS_cut_vs_Q2.pdf}
+    \caption{Cross sections and uncertainties for the 10x250~GeV$^2$ ep beam configuration as a function of $Q^2$ with no purity/stability requirement.}
+\label{fig:xsec_stamp_10x250_Q2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.98\linewidth]{Figures/xsec_10x130_multiplot_no_PS_cut_vs_x.pdf}
+    \caption{Cross sections and uncertainties for the 10x130~GeV$^2$ ep beam configuration as a function of $x$ with no purity/stability requirement.}
+\label{fig:xsec_stamp_10x130_x}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.98\linewidth]{Figures/xsec_10x250_multiplot_no_PS_cut_vs_x.pdf}
+    \caption{Cross sections and uncertainties for the 10x250~GeV$^2$ ep beam configuration as a function of $x$ with no purity/stability requirement.}
+\label{fig:xsec_stamp_10x250_x}
+\end{figure}
+
+It is clear that, even during early science, the available phase space for neutral current ep cross section measurements will be significantly extended compared to existing world data. Each point at which a cross section measurement is made also corresponds to a point at which the $F_2$ structure function may be extracted, though with model dependence as theoretical predictions must be used to calculate $F_L$ in this case. Historically at HERA, many publications on reduced cross sections where $F_2$ is extracted have either quoted the value without an uncertainty, or used the relative uncertainty of the reduced cross section measurement~\cite{H1:1999qgy,H1:2000olm,H1:2009jxj,ZEUS:2001mhd}. Hence, the fractional uncertainties on the cross section projections shown here would also be the fractional uncertainty of $F_2$ if this approach was used, though this approach neglects the uncertainty arising from the model dependence. In the region where multiple measurements can be made at the same $(x,Q^2)$ with different beam energies, the value of $F_L$ may be extracted~\cite{Jimenez-Lopez:2024hpj}, and $F_2$ determined without model dependence. For improved precision and robustness of the extraction, it is preferable to use measurements at three or more centre of mass energies, such that a traditional Rosenbluth separation may be applied. There is currently no plan to run more than two ep beam configurations during the early science period. It has been shown here that high precision measurements of the neutral current reduced cross section may be made even for only 1~fb$^{-1}$ of integrated luminosity, and so a short ep run at 5x130~GeV$^2$ could potentially have significant impact on the extraction of the proton structure functions.
+
+\section{Conclusions}
+
+Inclusive DIS measurements during EIC early science provide the opportunity to constrain the proton structure functions and PDFs with high precision data in a region that bridges the gap between fixed target experiments and HERA. The precision indicated by current simulations of the ePIC detector is sufficient to allow high quality measurements to be taken over a large range in $x$ and $Q^2$. Measurements at the highest available values of $x$ and $Q^2$ are possible, but are statistically limited for the luminosities expected during early science. The addition of a currently unplanned lower beam energy ep run to the early science run plan would provide the opportunity to measure $F_L$ in a new kinematic range, though measurements with lower precision may still be possible with two beam configurations. The phase space over which high quality measurements can be made may be extended to lower $y$ by complementing measurements using electron-only kinematic reconstruction as shown here with those that use a mixture of electron and hadronic final state information. 
+
+\pagebreak
+
+% \appendix
+% \section{Appendix}
+% \input{Appendix}
+
+\bibliographystyle{elsarticle-num} 
+\bibliography{bibliography.bib}
+
+\end{document}
